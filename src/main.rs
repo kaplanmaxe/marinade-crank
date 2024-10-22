@@ -157,8 +157,6 @@ async fn main() {
                     let stake_delta = client.state.stake_delta(reserve_balance);
                     let total_active_balance = client.state.validator_system.total_active_balance;
                     let total_stake_delta: u64;
-                    // let total_stake_delta =
-                    //     u64::try_from(stake_delta).expect("Stake delta overflow");
                     match u64::try_from(stake_delta) {
                         Ok(stake_delta) => {
                             total_stake_delta = stake_delta;
